@@ -1,7 +1,8 @@
 from django.urls import path
 from controls.views import (
-      signin,
-      signup
+    signin,
+    signup,
+
 )
 
 urlpatterns = [
