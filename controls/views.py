@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.db.models import Q
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import logout, login, authenticate
 
 
 # Create your views here.
@@ -14,17 +14,19 @@ def signin(request):
             email = request.POST.get('email')
             password = request.POST.get('password')
 
-            user = User.objects.filter(email=email).first()            
+            user = User.objects.filter(email=email).first() 
+
+            if not user:  
+                  messages.add_message(request, messages.ERROR, 'Credencias invalida')
+                  return redirect(reverse('signin'))         
             user_authenticated = authenticate(request, username=user.username, password=password)      
 
             if not user_authenticated:
                   messages.add_message(request, messages.ERROR, 'Credencias invalida')
                   return redirect(reverse('signin'))
             
-            login(request, user)
-            messages.add_message(request, messages.SUCCESS, 'Login feito com sucesso')
-            
-            return render(request, 'site/dashboard.html')
+            login(request, user)            
+            return redirect('read_product')
       return render(request, template_name)
 
 #TODO: FAZER VALIDACOE AVANCADAS
@@ -51,3 +53,7 @@ def signup(request):
             return redirect('signin')
       
       return render(request, template_name)
+
+def signout(request):
+      logout(request)
+      return redirect('signin')

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-gqqyvy__f101i!z&^^u5o*nhb0=chz3o%7a4a!)f=c@g=z-xad
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # APPS
+    'product',
+    'web',
+    'controls',
     # TAILWIND
     'tailwind',
     'theme',
@@ -123,6 +127,10 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = (BASE_DIR.joinpath('assets'),)
 STATIC_ROOT = 'static'
+
+# MEDIA
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR.joinpath('upload')
 
 # TAILWIND
 TAILWIND_APP_NAME = 'theme'
