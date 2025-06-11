@@ -21,7 +21,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('controls/', include('controls.urls')),
+    path('', include('controls.urls')),
     path('web/', include('web.urls')),
     path('product/', include('product.urls')),
     #TAILWIND

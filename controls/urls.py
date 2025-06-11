@@ -6,7 +6,7 @@ from controls.views import (
 )
 
 urlpatterns = [
-    path('signin/', signin, name='signin'),
+    path('', signin, name='signin'),
     path('signup/', signup, name='signup'),
     path('signout/', signout, name='signout'),
 ]
