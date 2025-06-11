@@ -4,9 +4,9 @@
       <div class="h-19">
         <i class="absolute top-0 right-0 p-4 opacity-50 cursor-pointer fas fa-times  text-slate-400 xl:hidden" sidenav-close></i>
         <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap  text-slate-700" href="https://demos.creative-tim.com/argon-dashboard-tailwind/pages/dashboard.html" target="_blank">
-          <img src="{% static "/img/logo-ct-dark.png" %}" class="inline h-full max-w-full transition-all duration-200 dark:hidden ease-nav-brand max-h-8" alt="main_logo" />
-          <img src="{% static "/img/logo-ct.png" %}" class="hidden h-full max-w-full transition-all duration-200 dark:inline ease-nav-brand max-h-8" alt="main_logo" />
-          <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand">Argon Dashboard 2</span>
+          <img src="{% static "/img/main.jpeg" %}" class="inline h-full max-w-full transition-all duration-200 dark:hidden ease-nav-brand max-h-8" alt="main_logo" />
+          <img src="{% static "/img/main.jpeg" %}" class="hidden h-full max-w-full transition-all duration-200 dark:inline ease-nav-brand max-h-8" alt="main_logo" />
+          <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand">Kumbutech</span>
         </a> 
       </div>
 
@@ -18,7 +18,7 @@
           <li class="mt-0.5 w-full">
             <a class="py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors  dark:opacity-80" href="{% url "dashboard" %}">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                <i class="relative top-0 text-sm leading-normal text-blue-500 ni ni-tv-2"></i>
+                <i class="relative top-0 text-sm leading-normal text-blue-500 fas fa-tachometer-alt"></i>
               </div>
               <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Dashboard</span>
             </a>
@@ -29,16 +29,16 @@
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                 <i class="relative top-0 text-sm leading-normal text-orange-500 ni ni-calendar-grid-58"></i>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Tables</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Tabelas dos Produtos</span>
             </a>
           </li>
 
           <li class="mt-0.5 w-full">
             <a class="py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors  dark:opacity-80" href="{% url "product" %}">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center fill-current stroke-0 text-center xl:p-2.5">
-                <i class="relative top-0 text-sm leading-normal text-emerald-500 ni ni-credit-card"></i>
+                <i class="relative top-0 text-sm leading-normal text-emerald-500 fa fa-plus"></i>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Product</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Cadastro de Produtos</span>
             </a>
           </li>
 
@@ -51,20 +51,20 @@
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors  dark:opacity-80" href="../pages/profile.html">
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors  dark:opacity-80" href="#">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                 <i class="relative top-0 text-sm leading-normal text-slate-700 ni ni-single-02"></i>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Profile</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Perfil *</span>
             </a>
           </li>
 
           <li class="mt-0.5 w-full">
             <a class="py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors  dark:opacity-80" href="{% url "signout" %}">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                <i class="relative top-0 text-sm leading-normal text-orange-500 ni ni-single-copy-04"></i>
+                <i class="relative top-0 text-sm leading-normal text-orange-500 fa fa-sign-out"></i>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Sign Out</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Sair</span>
             </a>
           </li>
 
