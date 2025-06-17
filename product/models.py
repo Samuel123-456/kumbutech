@@ -2,6 +2,7 @@ from django.db import models
 from secrets import token_urlsafe
 from django.contrib.auth.models import User
 from datetime import datetime
+from django.utils import timezone
 
 # Create your models here.
 class Category(models.Model):
@@ -21,7 +22,7 @@ class Product(models.Model):
       
       slug = models.SlugField(default=None, editable=False)
 
-      date_entry = models.DateTimeField(verbose_name='Data de entrada')
+      date_entry = models.DateTimeField(verbose_name='Data de entrada', default=None)
       date_valid = models.DateField(verbose_name='Data De exporacao')
       empresa = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -30,6 +31,8 @@ class Product(models.Model):
       def save(self, *args, **kwargs):
             if not self.slug:
                   self.slug = token_urlsafe()
+            if not self.date_entry:
+                  self.date_entry = timezone.now()
             return super().save(*args, **kwargs)
       
       def __str__(self):
