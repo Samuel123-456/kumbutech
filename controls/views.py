@@ -5,29 +5,32 @@ from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth import logout, login, authenticate
 
+from django.views import View
+from controls.forms import SigninForm
 
 # Create your views here.
-def signin(request):
+class SiginView(View):
       template_name = 'controls/signin.html'
+
+      def get(self, request):
+            context = dict()
+
+            formset = SigninForm(request=request)
+
+            context['formset'] = formset
+            return render(request, self.template_name, context)
       
-      if request.method == 'POST':
-            email = request.POST.get('email')
-            password = request.POST.get('password')
+      def post(self, request):
+            formset = SigninForm(data=request.POST, request=request)
 
-            user = User.objects.filter(email=email).first() 
-
-            if not user:  
-                  messages.add_message(request, messages.ERROR, 'Credencias invalida')
-                  return redirect(reverse('signin'))         
-            user_authenticated = authenticate(request, username=user.username, password=password)      
-
-            if not user_authenticated:
-                  messages.add_message(request, messages.ERROR, 'Credencias invalida')
-                  return redirect(reverse('signin'))
+            if formset.is_valid():
+                  user = formset.get_user_or_none()
+                  if user:
+                        login(request, user)
+                        return redirect('create-product')
             
-            login(request, user)            
-            return redirect('read_product')
-      return render(request, template_name)
+            messages.add_message(request, messages.ERROR, 'Credenciais Erradas.')
+            return redirect(reverse('signin'))
 
 #TODO: FAZER VALIDACOE AVANCADAS
 def signup(request):
