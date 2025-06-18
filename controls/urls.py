@@ -1,12 +1,12 @@
 from django.urls import path
 from controls.views import (
-    signin,
     signup,
-    signout
+    signout,
+    SiginView
 )
 
 urlpatterns = [
-    path('', signin, name='signin'),
+    path('', SiginView.as_view(), name='signin'),
     path('signup/', signup, name='signup'),
     path('signout/', signout, name='signout'),
 ]
